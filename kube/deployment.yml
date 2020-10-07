@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hyperf-demo
+  namespace: default
+  labels:
+    app: hyperf-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hyperf-demo
+  template:
+    metadata:
+      labels:
+        app: hyperf-demo
+    spec:
+      containers:
+        - name: hyperf-demo
+          image: ivannis/kube:latest
+          ports:
+            - containerPort: 9501
+              name: http
