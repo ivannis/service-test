@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: hyperf-demo
-          image: ivannis/kube:latest
+          image: ivannis/kube:$COMMIT_SHA1
           ports:
             - containerPort: 9501
               name: http
