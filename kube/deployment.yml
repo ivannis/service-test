@@ -21,3 +21,6 @@ spec:
           ports:
             - containerPort: 9501
               name: http
+          envFrom:
+            - configMapRef:
+                name: cluster-env
